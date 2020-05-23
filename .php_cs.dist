@@ -1,0 +1,16 @@
+<?php
+
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@Symfony' => true,
+        'array_indentation' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'blank_line_after_opening_tag' => false,
+        'concat_space' => ['spacing' => 'one'],
+        'declare_equal_normalize' => false,
+        'phpdoc_to_comment' => false,
+        'single_blank_line_before_namespace' => false,
+        'single_line_throw' => false,
+        'class_definition' => false,
+    ])
+;

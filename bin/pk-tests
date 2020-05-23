@@ -1,0 +1,36 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+$foundKey = false;
+foreach ($_SERVER['argv'] as $key => $argument) {
+    if (0 !== strpos($argument, '--project-dir=')) {
+        continue;
+    }
+    $projectDir = str_replace('--project-dir=', '', $argument);
+    $foundKey = $key;
+    break;
+}
+if (!isset($projectDir)) {
+    $projectDir = realpath(__DIR__ . '/../../../..');
+}
+
+if (!file_exists("$projectDir/vendor/autoload.php")) {
+    exit('Dependencies should be installed via Composer!' . \PHP_EOL);
+}
+
+require "$projectDir/vendor/autoload.php";
+
+$xdebug = new \Composer\XdebugHandler\XdebugHandler('CI');
+$xdebug->check();
+unset($xdebug);
+
+if ($foundKey) {
+    unset($_SERVER['argv'][$key]);
+}
+
+error_reporting(-1);
+
+$app = new \PK\CI\Application($projectDir);
+$app->run();
