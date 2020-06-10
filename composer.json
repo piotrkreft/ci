@@ -11,12 +11,12 @@
     ],
     "bin": ["bin/pk-tests"],
     "require": {
-        "php": "^7.3",
+        "php": ">=7.2.9",
         "friendsofphp/php-cs-fixer": "^2.16",
-        "infection/infection": "^0.16",
+        "infection/infection": "^0.15|^0.16",
         "php-coveralls/php-coveralls": "^2.2",
         "phpmd/phpmd": "^2.8",
-        "phpunit/phpunit": "^9.0",
+        "phpunit/phpunit": "^8.5|^9.0",
         "slevomat/coding-standard": "^6.0",
         "squizlabs/php_codesniffer": "^3.5.5",
         "symfony/console": "^3.4.31|^4.0|^5.0"
