@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PK\Tests\CI\TestRunner;
 
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use PK\CI\Configuration\Directories;
 use PK\CI\Locator\Locator;
@@ -12,7 +13,7 @@ use PK\CI\TestRunner\PHPCsFixer;
 class PHPCsFixerTest extends TestCase
 {
     /**
-     * @var Locator
+     * @var Locator|MockObject
      */
     private $mockLocator;
 
