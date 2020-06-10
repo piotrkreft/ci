@@ -27,11 +27,6 @@ class PHPUnitTest extends TestCase
     {
         $this->mockLocator = $this->createMock(Locator::class);
         $this->runner = new PHPUnit();
-
-        $this->mockLocator->method('locateConfigurationFile')
-            ->willReturnCallback(function (string $file): string {
-                return $file;
-            });
     }
 
     /**
@@ -41,6 +36,12 @@ class PHPUnitTest extends TestCase
      */
     public function testShouldGetArgv(Directories $directories, array $expected): void
     {
+        // given
+        $this->mockLocator->method('locateConfigurationFile')
+            ->willReturnCallback(function (string $file): string {
+                return $file;
+            });
+
         // when
         $argv = $this->runner->getArgv($this->mockLocator, $directories);
 
