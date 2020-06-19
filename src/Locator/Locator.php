@@ -23,13 +23,13 @@ class Locator
      */
     public function locateConfigurationFile(string $file): string
     {
-        if (file_exists($config = "$this->projectDir/$file")) {
+        if (is_file($config = "$this->projectDir/$file")) {
             return $config;
         }
-        if (file_exists($config = "$this->projectDir/$file.dist")) {
+        if (is_file($config = "$this->projectDir/$file.dist")) {
             return $config;
         }
-        if (file_exists($config = "$this->projectDir/vendor/piotrkreft/ci/$file.dist")) {
+        if (is_file($config = "$this->projectDir/vendor/piotrkreft/ci/$file.dist")) {
             return $config;
         }
 

@@ -16,7 +16,7 @@ if (!isset($projectDir)) {
     $projectDir = realpath(__DIR__ . '/../../../..');
 }
 
-if (!file_exists("$projectDir/vendor/autoload.php")) {
+if (!is_file("$projectDir/vendor/autoload.php")) {
     exit('Dependencies should be installed via Composer!' . \PHP_EOL);
 }
 
