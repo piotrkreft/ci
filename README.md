@@ -14,3 +14,6 @@ A simple package containing tests and dependencies to maintain quality across pr
 `bin/pk-tests fix` - triggers fixers for static checks
 
 By using `--project-dir` option it's possible to manipulate the directory taken as a main one.
+
+## License
+The MIT License (MIT). Please see [LICENSE](LICENSE) for more information.
