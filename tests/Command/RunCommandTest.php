@@ -68,13 +68,8 @@ class RunCommandTest extends TestCase
             ->method('getArgv')
             ->willReturn(['two']);
         $this->mockExecutor
-            ->expects($this->at(0))
             ->method('run')
-            ->with($this->mockRunnerOne, 'one');
-        $this->mockExecutor
-            ->expects($this->at(1))
-            ->method('run')
-            ->with($this->mockRunnerTwo, 'two');
+            ->withConsecutive([$this->mockRunnerOne, 'one'], [$this->mockRunnerTwo, 'two']);
 
         // when
         $exitCode = $this->tester->execute([]);
