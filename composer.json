@@ -14,7 +14,7 @@
         "php": ">=7.2.9",
         "composer/package-versions-deprecated": "^1.1",
         "friendsofphp/php-cs-fixer": "^2.16",
-        "infection/infection": "^0.15|^0.16",
+        "infection/infection": "^0.15|^0.20",
         "php-coveralls/php-coveralls": "^2.2",
         "phpmd/phpmd": "^2.8",
         "phpunit/phpunit": "^8.5|^9.0",
